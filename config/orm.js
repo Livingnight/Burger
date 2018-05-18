@@ -2,9 +2,9 @@ const connection = require('../config/connection');
 
 const printQuestionMarks = num => {
     let arr = [];
-    num.forEach( value => {
+    for(let i=0; i < num; i++)  {
         arr.push("?")
-    });
+    };
     return arr.toString();
 };
 
@@ -32,6 +32,8 @@ const orm = {
 
     },
     insertOne: (table, cols, vals, cb) => {
+        console.log(`cols to string: ${cols.toString()}`);
+        console.log(`vals length: ${vals.length}`);
         const queryString =
             `INSERT INTO ${table} (${cols.toString()}) VALUES (${printQuestionMarks(vals.length)})`;
         console.log(queryString);
@@ -42,7 +44,7 @@ const orm = {
         });
     },
     updateOne: (table, objColVals, condition, cb) => {
-        const queryString = `UPDATE ${table} SET ${objToSql(objColVals)}) WHERE ${condition}`
+        const queryString = `UPDATE ${table} SET ${objToSql(objColVals)} WHERE ${condition}`;
         console.log(queryString);
         connection.query(queryString, (err,result) => {
             if(err) throw err;
