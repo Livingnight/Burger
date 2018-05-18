@@ -17,8 +17,6 @@ $(document).ready( () => {
             console.log(`changed devoured value to ${newDevoured}`);
 
             location.reload();
-        }).catch( err => {
-            console.log(err);
         })
     });
     $('.create-form').on('submit', event => {
@@ -34,11 +32,10 @@ $(document).ready( () => {
             console.log(`data: ${data}`);
             console.log(`posted value: ${data}`);
             location.reload();
-        }).catch( err => {
-            console.log(err);
         })
-    })
-    $('#delete-burger').on('click', function(event) {
+    });
+    $('.delete-burger').on('click', function(event) {
+        console.log(`delete button clicked`);
         var id =$(this).data('id');
         $.ajax(`/api/burger/${id}`, {
             type: "DELETE"
