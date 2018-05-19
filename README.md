@@ -1,5 +1,5 @@
 # Burger
-![alt-text](https://github.com/Livingnight/Burger/public/assets/images/burgers-pexels-photo-617230.jpeg)
+![alt-text](https://github.com/Livingnight/Burger/blob/master/public/assets/images/burgers-pexels-photo-617230.jpeg)
 ## This is an app that will allow you to add burgers to a database and allow you to eat them or delete them by clicking on the appropriate button
 
 ## Dependencies
